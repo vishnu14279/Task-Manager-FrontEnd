@@ -98,93 +98,48 @@ const App = () => {
       </Header>
 
 
-      // <Content style={{ padding: "10px" }}>
-      //   <Routes>
-      //     // <Route path="/" element={auth ? <Navigate to="/managetasks" /> : <Navigate to="/auth" />} />
+      <Content style={{ padding: "10px" }}>
+        <Routes>
+          // <Route path="/" element={auth ? <Navigate to="/managetasks" /> : <Navigate to="/auth" />} />
 
-      //     <Route
-      //       path="/auth"
-      //       element={
-      //         auth ? (
-      //           <Navigate to="/managetasks" />
-      //         ) : (
-      //           <Row justify="center" gutter={[16, 16]}>
-      //             <Col xs={24} sm={24} md={16} lg={12}>
-      //               <Auth setAuth={setAuth} />
-      //             </Col>
-      //           </Row>
-      //         )
-      //       }
-      //     />
+          <Route
+            path="/auth"
+            element={
+              auth ? (
+                <Navigate to="/managetasks" />
+              ) : (
+                <Row justify="center" gutter={[16, 16]}>
+                  <Col xs={24} sm={24} md={16} lg={12}>
+                    <Auth setAuth={setAuth} />
+                  </Col>
+                </Row>
+              )
+            }
+          />
 
-      //     <Route
-      //       path="/managetasks"
-      //       element={
-      //         auth ? (
-      //           <Row justify="center" gutter={[16, 16]}>
-      //             <Col xs={24} sm={24} md={24} lg={24}>
-      //               <Card style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)" }}>
-      //                 <TaskManager userData={userData} username={userData?.name} setAuth={setAuth} />
-      //               </Card>
-      //             </Col>
-      //           </Row>
-      //         ) : (
-      //           <Navigate to="/auth" />
-      //         )
-      //       }
-      //     />
-      //     <Route path="*" element={<Navigate to="/" />} />
-      //   </Routes>
-      // </Content>
-<Content style={{ padding: "10px" }}>
-  <Routes>
-    {/* Default route: Redirect to /managetasks if authenticated, otherwise to /auth */}
-    <Route
-      path="/"
-      element={auth ? <Navigate to="/managetasks" /> : <Navigate to="/auth" />}
-    />
+          <Route
+            path="/managetasks"
+            element={
+              auth ? (
+                <Row justify="center" gutter={[16, 16]}>
+                  <Col xs={24} sm={24} md={24} lg={24}>
+                    <Card style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)" }}>
+                      <TaskManager userData={userData} username={userData?.name} setAuth={setAuth} />
+                    </Card>
+                  </Col>
+                </Row>
+              ) : (
+                <Navigate to="/auth" />
+              )
+            }
+          />
+         <Route
+              path="*"
+              element={auth ? <Navigate to="/managetasks" /> : <Navigate to="/auth" />}
+            />    
+        </Routes>
+      </Content>
 
-    {/* Auth route: Show Auth component if not authenticated, otherwise redirect to /managetasks */}
-    <Route
-      path="/auth"
-      element={
-        auth ? (
-          <Navigate to="/managetasks" />
-        ) : (
-          <Row justify="center" gutter={[16, 16]}>
-            <Col xs={24} sm={24} md={16} lg={12}>
-              <Auth setAuth={setAuth} />
-            </Col>
-          </Row>
-        )
-      }
-    />
-
-    {/* ManageTasks route: Show TaskManager if authenticated, otherwise redirect to /auth */}
-    <Route
-      path="/managetasks"
-      element={
-        auth ? (
-          <Row justify="center" gutter={[16, 16]}>
-            <Col xs={24} sm={24} md={24} lg={24}>
-              <Card style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)" }}>
-                <TaskManager userData={userData} username={userData?.name} setAuth={setAuth} />
-              </Card>
-            </Col>
-          </Row>
-        ) : (
-          <Navigate to="/auth" />
-        )
-      }
-    />
-
-    {/* Catch-all route: Redirect to /auth if auth is null, otherwise to /managetasks */}
-    <Route
-      path="*"
-      element={auth ? <Navigate to="/managetasks" /> : <Navigate to="/auth" />}
-    />
-  </Routes>
-</Content>
     </Layout>
   );
 };
