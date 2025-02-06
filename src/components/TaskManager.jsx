@@ -15,7 +15,7 @@ const { Title, Text } = Typography;
 const TaskManager = ({ userData, userRole, username, setAuth }) => {
     const dispatch = useDispatch();
     const tasks = useSelector((state) => state.tasks.tasks);
-    const apiUrl = "http://localhost:3001";
+    const apiUrl = "https://task-manager-backend-kxmk.onrender.com";
     const { Title } = Typography;
 
     const [isModalOpen, setIsModalOpen] = useState(false);
