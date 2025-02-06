@@ -50,15 +50,7 @@ const TaskManager = ({ userData, userRole, username, setAuth }) => {
             message.error("Failed to fetch tasks!");
         }
     };
-    const fetchUsers = async () => {
-        try {
-            const { data } = await axiosInstance.get("/api/users/all");
-            setUsers(data);
-        } catch (error) {
-            console.error("Error fetching users:", error);
-            message.error("Failed to fetch users!");
-        }
-    };
+  
 
     const hasPermission = (task) => {
         const createdById = task?.createdBy?._id || task?.createdBy;
@@ -200,7 +192,6 @@ const TaskManager = ({ userData, userRole, username, setAuth }) => {
 
     useEffect(() => {
         fetchTasks(filters);
-        fetchUsers();
     }, [filters, dispatch]);
 
 
