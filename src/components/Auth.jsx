@@ -9,7 +9,7 @@ const { Option } = Select;
 const Auth = ({ setAuth }) => {
   const [isLogin, setIsLogin] = useState(true);
   const [form, setForm] = useState({ email: "", password: "" });
-  const apiUrl = "http://localhost:3001";
+  const apiUrl = "https://task-manager-backend-kxmk.onrender.com";
 
   const toggleMode = () => setIsLogin((prev) => !prev);
 
