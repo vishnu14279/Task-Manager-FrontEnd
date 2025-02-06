@@ -6,6 +6,7 @@ import { UserOutlined } from "@ant-design/icons";
 import TaskManager from "./components/TaskManager";
 import axios from "axios";
 import {Routes, Route, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const { Header, Content } = Layout;
 
@@ -16,13 +17,16 @@ const App = () => {
   });
   const [userData, setUserData] = useState(null);
   const apiUrl = "https://task-manager-backend-kxmk.onrender.com";
+  const navigate = useNavigate();
 
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     setAuth({ token: null, user: null });
     setUserData(null);
-    window.location.reload();
+    // window.location.reload();
+        navigate("/auth"); // Redirect to /auth after logout
+
   };
 
 
