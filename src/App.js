@@ -6,7 +6,6 @@ import { UserOutlined } from "@ant-design/icons";
 import TaskManager from "./components/TaskManager";
 import axios from "axios";
 import {Routes, Route, Navigate } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 const { Header, Content } = Layout;
 
@@ -17,7 +16,6 @@ const App = () => {
   });
   const [userData, setUserData] = useState(null);
   const apiUrl = "https://task-manager-backend-kxmk.onrender.com";
-  const navigate = useNavigate();
 
 
   const handleLogout = () => {
@@ -37,13 +35,6 @@ const App = () => {
         .catch((error) => console.error("Error fetching user data:", error));
     }
   }, [auth]);
-  
-   useEffect(() => {
-    if (!auth?.token) {
-      navigate("/auth", { replace: true });
-    }
-  }, [auth, navigate]);
-
 
   const profileMenu = (
     <Menu>
@@ -109,7 +100,7 @@ const App = () => {
 
       <Content style={{ padding: "10px" }}>
         <Routes>
-          <Route path="/" element={auth ? <Navigate to="/managetasks" /> : <Navigate to="/auth" />} />
+          // <Route path="/" element={auth ? <Navigate to="/managetasks" /> : <Navigate to="/auth" />} />
 
           <Route
             path="/auth"
