@@ -25,8 +25,7 @@ const App = () => {
     setAuth({ token: null, user: null });
     setUserData(null);
     // window.location.reload();
-        navigate("/auth"); // Redirect to /auth after logout
-
+window.location.href = `${apiUrl}/auth`;
   };
 
 
