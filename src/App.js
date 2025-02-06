@@ -39,7 +39,11 @@ const App = () => {
         .catch((error) => console.error("Error fetching user data:", error));
     }
   }, [auth]);
-
+useEffect(() => {
+  if (!auth) {
+    navigate("/auth");
+  }
+}, [auth, navigate]);
   const profileMenu = (
     <Menu>
       <Menu.Item key="user-info" disabled>
