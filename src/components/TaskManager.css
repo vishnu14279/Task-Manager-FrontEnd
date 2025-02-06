@@ -1,0 +1,59 @@
+.sortIcon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-task-List {
+    display: flex;
+    justify-content: space-between;
+    height: 600px;
+}
+
+.todo-task-list-main {
+    width: 50%;
+    overflow-y: auto;
+}
+
+.todo-list-divider {
+    height: 100%;
+    margin: 0 20px
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .todo-task-List {
+        display: flex;
+        justify-content: space-between;
+        height: 600px;
+        flex-direction: column;
+    }
+
+    .todo-task-list-main {
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .todo-list-divider {
+        height: 0%;
+        margin: 0 20px
+    }
+}
+
+@media (min-width: 390px) and (max-width: 600px) {
+    .todo-task-List {
+        display: flex;
+        justify-content: space-between;
+        height: 600px;
+        flex-direction: column;
+    }
+
+    .todo-task-list-main {
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .todo-list-divider {
+        height: 0%;
+        margin: 0 20px
+    }
+}
