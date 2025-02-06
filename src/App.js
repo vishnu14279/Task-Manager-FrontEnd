@@ -16,7 +16,7 @@ const App = () => {
     return token ? { token, user: jwtDecode(token) } : null;
   });
   const [userData, setUserData] = useState(null);
-  const apiUrl = "https://task-manager-backend-kxmk.onrender.com";
+  const apiUrl = "http://localhost:3001";
   const navigate = useNavigate();
 
 
@@ -24,8 +24,7 @@ const App = () => {
     localStorage.removeItem("token");
     setAuth({ token: null, user: null });
     setUserData(null);
-    // window.location.reload();
-window.location.href = "https://task-manager-udh2.onrender.com/";
+    window.location.reload();
   };
 
 
