@@ -25,7 +25,7 @@ const App = () => {
     setAuth({ token: null, user: null });
     setUserData(null);
     // window.location.reload();
-window.location.href = `${apiUrl}/auth`;
+window.location.href = "https://task-manager-udh2.onrender.com/auth";
   };
 
 
