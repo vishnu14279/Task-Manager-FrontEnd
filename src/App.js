@@ -15,7 +15,7 @@ const App = () => {
     return token ? { token, user: jwtDecode(token) } : null;
   });
   const [userData, setUserData] = useState(null);
-  const apiUrl = "http://localhost:3001";
+  const apiUrl = "https://task-manager-backend-kxmk.onrender.com";
 
 
   const handleLogout = () => {
